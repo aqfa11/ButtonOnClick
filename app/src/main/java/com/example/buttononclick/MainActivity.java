@@ -1,5 +1,6 @@
 package com.example.buttononclick;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,33 +29,37 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                email= "tara@email.com";
+                email= "Aqfa Tara";
                 sandi="345";
 
                 nama=edmail.getText().toString();
                 password=edpassword.getText().toString();
 
-                if(nama.equals(email) && password.equals(sandi)){
+                if(nama.isEmpty() || password.isEmpty()){
+                    Toast t=Toast.makeText(getApplicationContext(),
+                            "Email dan Password harus DIISI!!!", Toast.LENGTH_LONG);
+                    t.show();
+                }
+
+                else if(nama.equals(email) && password.equals(sandi)){
                     Toast benar2 = Toast.makeText(getApplicationContext(),
                             "Login BERHASIL",Toast.LENGTH_LONG);
                     benar2.show();
-                }
 
-                else if(nama.equals(email)){
-                    Toast emailbenar = Toast.makeText(getApplicationContext(),
-                            "Password SALAH",Toast.LENGTH_LONG);
-                    emailbenar.show();
-                }
+                    Bundle b = new Bundle();
 
-                else if(password.equals(sandi)){
-                    Toast sandibenar = Toast.makeText(getApplicationContext(),
-                            "E-Mail SALAH",Toast.LENGTH_LONG);
-                    sandibenar.show();
-                }
+                    b.putString("a", nama.trim());
+                    b.putString("b", password.trim());
 
+                    Intent i=new Intent(getApplicationContext(), ActivityKedua.class);
+
+                    i.putExtras(b);
+
+                    startActivity(i);
+                }
                 else {
                     Toast semuasalah = Toast.makeText(getApplicationContext(),
-                            "E-Mail dan Password SALAH", Toast.LENGTH_LONG);
+                            "Login GAGAL", Toast.LENGTH_LONG);
                     semuasalah.show();
                 }
 

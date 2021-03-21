@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Tampilan_Constraint_Layout</string>
     <string name="temail">E - Mail</string>
+    <string name="temailh2">E - Mail : </string>
     <string name="password">Password</string>
+    <string name="passwordh2">Password :</string>
     <string name="bsignin">Sign In</string>
+    <string name="tsambutan">Selamat Datang</string>
+    <string name="tdata">Data Anda</string>
+    <string name="emailhasil">Ini hasil E-Mail</string>
+    <string name="thasilpass">Ini hasil Password</string>
+    <string name="label2">Login Berhasil</string>
 </resources>
