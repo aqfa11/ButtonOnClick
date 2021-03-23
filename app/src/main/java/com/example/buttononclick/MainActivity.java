@@ -2,11 +2,14 @@ package com.example.buttononclick;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,13 +19,28 @@ public class MainActivity extends AppCompatActivity {
     String nama, password;
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()==R.id.mnDaftar){
+            Intent i = new Intent(getApplicationContext(), DaftarActivity.class);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         btnLogin=findViewById(R.id.btnmasuk);
-        edmail=findViewById(R.id.isiemail);
-        edpassword=findViewById(R.id.isipass);
+        edmail=findViewById(R.id.edEmail);
+        edpassword=findViewById(R.id.edPass);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             String email,sandi;
