@@ -52,7 +52,7 @@ public class ListViewAdapter extends BaseAdapter {
             holder = new ViewHolder();
 
             view = inflater.inflate(R.layout.item_listview, null);
-
+            holder.name = (TextView) view.findViewById(R.id.tvnama_item);
             view.setTag(holder);
         }else {
             holder = (ViewHolder) view.getTag();
