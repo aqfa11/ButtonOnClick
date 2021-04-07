@@ -16,16 +16,94 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/avatar" />
 
+    <RadioGroup
+        android:id="@+id/opsi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edEmail">
+
+        <TextView
+            android:id="@+id/jKelamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jenis Kelamin : " />
+
+        <RadioButton
+            android:id="@+id/laki"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Laki-Laki" />
+
+        <RadioButton
+            android:id="@+id/perempuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Perempuan" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/gAgama"
+        android:layout_width="270dp"
+        android:layout_height="133dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opsi">
+
+        <TextView
+            android:id="@+id/agama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agama :  " />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <RadioButton
+                android:id="@+id/islam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Islam" />
+
+            <RadioButton
+                android:id="@+id/kristen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kristen" />
+
+            <RadioButton
+                android:id="@+id/Katolik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Katolik" />
+
+            <RadioButton
+                android:id="@+id/hindu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hindu" />
+        </RadioGroup>
+    </RadioGroup>
+
+
     <EditText
         android:id="@+id/edEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/eemail"
         android:inputType="textImeMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edNama" />
 
@@ -33,12 +111,12 @@
         android:id="@+id/edAlamat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="184dp"
         android:ems="10"
         android:hint="@string/ealamat"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edEmail" />
 
@@ -46,12 +124,12 @@
         android:id="@+id/edNama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/enama"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -103,11 +181,10 @@
         app:backgroundTint="#ADC545"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edRepass"
-        app:layout_constraintVertical_bias="0.233"
+        app:layout_constraintVertical_bias="0.305"
         app:srcCompat="@android:drawable/ic_menu_save" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

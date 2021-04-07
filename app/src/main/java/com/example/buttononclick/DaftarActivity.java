@@ -33,28 +33,45 @@ public class DaftarActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(edtNama.getText().toString().isEmpty() ||
-                        edtAlamat.getText().toString().isEmpty()||
-                        edtEmail.getText().toString().isEmpty()||
-                        edtPass.getText().toString().isEmpty()||
-                        edtRepass.getText().toString().isEmpty())
-                {
-                    Snackbar.make(v, "Wajib ISI Seluruh Data!!!",Snackbar.LENGTH_SHORT).show();
+                if(edtNama.getText().toString().length()==0){
+                    //jika nama belum di isi / masih kosong
+                    edtNama.setError("perlu nama");
                 }
-                else {
-                    if(edtPass.getText().toString().equals(edtRepass.getText().toString()))
-                    {
-                        Toast.makeText(getApplicationContext(), "Pendaftaran Berhasil...",
-                                Toast.LENGTH_LONG).show();
 
-                        Intent i = new Intent(getApplicationContext(),MainActivity.class);
-                        startActivity(i);
-                    }
-                    else {
-                        Snackbar.make(v, "Password dan Repassword Harus Sama!!!", Snackbar.LENGTH_SHORT).show();
-                    }
+                if(edtEmail.getText().toString().length()==0){
+                    //jika alamat belum di isi / masih kosong
+                    edtAlamat.setError("alamat diperlukan");
                 }
+
+                if(edtAlamat.getText().toString().length()==0){
+                    //jika email belum di isi / masih kosong
+                    edtEmail.setError("Email diperlukan!");
+                }
+
+                if(edtPass.getText().toString().length()==0){
+                    //jika Passwrod belum di isi / masih kosong
+                    edtPass.setError("Password diperlukan");
+                }else if(edtPass.getText().toString().length()!=6){
+                    edtPass.setError("Panjang Password kurang dari 6 huruf");
+                }
+
+                if(edtRepass.getText().toString().length()==0 || edtRepass.equals(edtPass)){
+                    //jika ulang Passwrod belum di isi / masih kosong
+                    edtRepass.setError("Ulangi Password diperlukan!");
+
+                }
+
+                if(edtNama.length() != 0 && edtAlamat.length() != 0 && edtEmail.length() != 0 && edtPass.length() !=0 && edtPass.length() == 6 && edtPass.getText() ==edtRepass.getText()){
+                    Toast.makeText(getApplicationContext(), "Registrasi Berhasil!",
+                            Toast.LENGTH_SHORT).show();
+                    //ke layout Main activity
+                    Intent i =  new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(i);
+                }
+
             }
         });
+
+
     }
 }

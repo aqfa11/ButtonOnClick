@@ -8,7 +8,9 @@ import android.widget.TextView;
 public class ActivityLihatData extends AppCompatActivity {
     TextView tvnama, tvnomor;
 
+    Bundle bundle = getIntent().getExtras();
 
+    String nama = bundle.getString("a");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
